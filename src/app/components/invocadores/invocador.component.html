@@ -1,0 +1,43 @@
+<h3 class="color-personal">INVOCADOR <small class="color-personal">{{ invocador.nombre }}</small></h3>
+<button [routerLink]="['/invocadores']" class="btn btn-outline-danger m-1">Regresar</button>
+<button (click)="agregarNuevo( forma )" class="btn btn-outline-success m-1">Nuevo Invocador</button>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-12 lol3">
+        <form (ngSubmit)="guardar()" #forma="ngForm" novalidate>
+            <div class="form-group">
+                <label class="color-personal">Nombre de invocador</label>
+                <input [(ngModel)]="invocador.nombre" type="text" name="nombre" class="form-control" placeholder="Nombre del invocador" required>
+            </div>
+            <div class="form-group">
+                <label class="color-personal">Nombre de usuario</label>
+                <input [(ngModel)]="invocador.username" type="text" name="username" class="form-control" placeholder="Nombre de usuario" required>
+            </div>
+            <div class="form-group">
+                <label class="color-personal">Servidor</label>
+                <select [(ngModel)]="invocador.servidor" name="servidor" class="form-control">
+                  <option value="" disabled selected>Elige tú region</option>
+                  <option *ngFor="let region of regiones" [value]="region.clave">{{region.descripcion}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="column m-3 text-center">
+                    <label class="color-personal">Liga</label>
+                    <select [ngStyle]="{'width': '200px'}||{'overflow':'auto'}" [(ngModel)]="invocador.liga" name="liga" class="form-control">
+                      <option *ngFor="let liga of ligas" [value]="liga.lig">{{liga.lig}}</option>
+                    </select>
+                </div>
+                <div class="column m-3 text-center">
+                    <label class="color-personal">División</label>
+                    <select [(ngModel)]="invocador.division" name="division" class="form-control">
+                      <option *ngFor="let division of divisiones" [value]="division.divi">{{division.divi}}</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-light">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>

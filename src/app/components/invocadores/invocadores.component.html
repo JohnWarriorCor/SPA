@@ -1,0 +1,43 @@
+<img src="assets/logo.jpg" class="rounded mx-auto d-block logo" alt="LOL">
+<div class="row">
+    <div class="col-md-12 text-right p-3">
+        <button [routerLink]="['/invocador', 'nuevo']" class="btn btn-outline-primary" type="button">Nuevo</button>
+    </div>
+</div>
+<div class="row animated fadeIn fast">
+    <div class="col-md-12">
+        <table class="table table-light table-striped table-hover">
+            <thead class="thead-dark">
+                <tr class="mitad">
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre de invocador</th>
+                    <th scope="col">Nombre de usuario</th>
+                    <th scope="col">Servidor</th>
+                    <th scope="col">Liga</th>
+                    <th scope="col">División</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="backg">
+                <tr *ngFor="let k of invocadores | keys; let i = index" class="mitad">
+                    <td scope="row">{{ i + 1 }}</td>
+                    <td>{{ invocadores[k].nombre }}</td>
+                    <td>{{ invocadores[k].username }}</td>
+                    <td>{{ invocadores[k].servidor }}</td>
+                    <td>{{ invocadores[k].liga }}</td>
+                    <td>{{ invocadores[k].division }}</td>
+                    <td class="text-right">
+                        <button [routerLink]="['/invocador', k]" type="button" class="btn btn-outline-success m-1">Editar</button>
+                        <button (click)="borrarInvocador(k)" type="button" class="btn btn-outline-danger m-1">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="(invocadores | keys).length === 0 && !loading" class="alert alert-info text-center" role="alert">
+            <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+        </div>
+        <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
+            <strong><h4 class="alert-heading">Cargando...</h4></strong>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container lol3">
+    <h1 class="animated fadeIn color-personal">{{ campeon.nombre|uppercase }}<small class="color-personal"> ({{ campeon.aparicion|date:'y' }})</small></h1>
+    <hr>
+    <div class="row animated fadeIn fast">
+        <div class="col-md-4">
+            <img [src]="campeon.img" class="img-fluid" [alt]="campeon.nombre">
+            <br><br>
+            <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block color-personal">Regresar</a>
+        </div>
+        <div class="col-md-8">
+            <h3 class="color-personal">{{ campeon.nombre }}</h3>
+            <hr>
+            <p class="color-personal">
+                {{campeon.bio}}
+            </p>
+            <div>
+                <img *ngIf="campeon.casa == 'Marvel'" class="region" src="assets/img/demacia.png" alt="Marvel">
+                <img *ngIf="campeon.casa == 'DC'" class="region" src="assets/img/noxus.png" alt="DC">
+            </div>
+            <br><br>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<div class="card-columns">
+  <!-- *ngFor="let heroe of heroes; let i = index" -->
+  <app-campeon-tarjeta (campeonSeleccionado)="verCampeon( $event )" [campeon]="foo" [index]="i" *ngFor="let foo of campeones; let i = index"></app-campeon-tarjeta>
+</div>
