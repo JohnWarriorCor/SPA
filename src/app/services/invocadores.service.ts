@@ -11,75 +11,102 @@ export class InvocadoresService {
   private campeones: Campeon[] = [
     {
       idx : 0,
-      nombre: 'Dra. Rostenkowski',
-      bio: 'Neuropediatra',
+      doc: 'Dra. Rostenkowski',
+      nombre: 'Sophie',
+      apellido: 'Rostenkowski',
+      genero: 'Femenino',
+      sede: 'Hospital Universitario',
+      esp: 'Neuropediatra',
       img: 'assets/img/doc1.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'Marvel'
+      telefono: 'Cel. 310 456 9089',
     },
     {
       idx : 1,
-      nombre: 'Dr. Cooper',
-      bio: 'Neurologo',
+      doc: 'Dr. Cooper',
+      nombre: 'Sheldon',
+      apellido: 'Cooper',
+      genero: 'Masculino',
+      sede: 'Hospital Universitario',
+      esp: 'Neurologo',
       img: 'assets/img/doc2.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'DC'
+      telefono: 'Cel. 310 456 9089',
     },
     {
       idx : 2,
-      nombre: 'Dra. Fowler',
-      bio: 'Neurologa',
+      doc: 'Dra. Fowler',
+      nombre: 'Amy',
+      apellido: 'Fowler',
+      genero: 'Femenino',
+      sede: 'Hospital Universitario',
+      esp: 'Neurologa',
       img: 'assets/img/doc3.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'Marvel'
+      telefono: 'Cel. 310 456 9089',
     },
     {
       idx : 3,
-      nombre: 'Dr. Hofstadter',
-      bio: 'Neurofisiologo clínico',
+      doc: 'Dr. Hofstadter',
+      nombre: 'Leonard',
+      apellido: 'Hofstadter',
+      genero: 'Masculino',
+      sede: 'Hospital Universitario',
+      esp: 'Neurofisiologo clínico',
       img: 'assets/img/doc4.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'Marvel'
+      telefono: 'Cel. 310 456 9089',
     },
     {
       idx : 4,
-      nombre: 'Dr. Koothrappali',
-      bio: 'Neurocirujano',
+      doc: 'Dr. Koothrappali',
+      nombre: 'Rahj',
+      apellido: 'Koothrappali',
+      genero: 'Masculino',
+      sede: 'Hospital Universitario',
+      esp: 'Neurocirujano',
       img: 'assets/img/doc5.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'DC'
+      telefono: 'Cel. 310 456 9089',
     },
     {
       idx : 5,
-      nombre: 'Dr. Wolowitz',
-      bio: 'Neurologo',
+      doc: 'Dr. Wolowitz',
+      nombre: 'Howard',
+      apellido: 'Wolowitz',
+      genero: 'Masculino',
+      sede: 'Hospital Universitario',
+      esp: 'Neurologo',
       img: 'assets/img/doc6.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'Marvel'
+      telefono: 'Cel. 310 456 9089',
     },
     {
       idx : 6,
-      nombre: 'Dr. Murphy',
-      bio: 'Neuropediatra',
+      doc: 'Dr. Murphy',
+      nombre: 'Shawm',
+      apellido: 'Murphy',
+      genero: 'Masculino',
+      sede: 'Hospital Universitario',
+      esp: 'Neuropediatra',
       img: 'assets/img/doc7.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'Marvel'
+      telefono: 'Cel. 310 456 9089'
     },
     {
       idx : 7,
-      nombre: 'Dra. Browne',
-      bio: 'Neurologa',
+      doc: 'Dra. Browne',
+      nombre: 'Browne',
+      apellido: 'Emily',
+      genero: 'Femenino',
+      sede: 'Hospital Universitario',
+      esp: 'Neurologa',
       img: 'assets/img/doc8.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'Marvel'
+      telefono: 'Cel. 310 456 9089',
     },
     {
       idx : 8,
-      nombre: 'Dr. Glassman',
-      bio: 'Psiquiatra',
+      doc: 'Dr. Glassman',
+      nombre: 'Erik',
+      apellido: 'Glassman',
+      genero: 'Masculino',
+      sede: 'Hospital Universitario',
+      esp: 'Psiquiatra',
       img: 'assets/img/doc9.jpg',
-      aparicion: 'Cel. 310 456 9089',
-      casa: 'Marvel'
+      telefono: 'Cel. 310 456 9089',
     }
   ];
 
@@ -156,9 +183,12 @@ export class InvocadoresService {
 
 export interface Campeon {
   idx?: number;
+  doc: string;
   nombre: string;
-  bio: string;
+  apellido: string;
+  genero: string;
+  sede: string;
+  esp: string;
   img: string;
-  aparicion: string;
-  casa: string;
+  telefono: string;
 }

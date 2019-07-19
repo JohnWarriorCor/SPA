@@ -1,9 +1,9 @@
 <div class="card animated fadeIn fast shadow p-3 mb-5 bg-white rounded">
-    <img class="card-img-top img-fluid" [src]="campeon.img" [alt]="campeon.nombre">
+    <img class="card-img-top img-fluid" [src]="campeon.img" [alt]="campeon.esp">
     <div class="card-body">
-        <h4 class="card-title" style="text-align: center">{{ campeon.nombre }}</h4>
-        <p class="card-text" style="text-align: center"> {{ campeon.bio }} </p>
-        <p class="card-text" style="text-align: center"><small class="text-muted" >{{ campeon.aparicion }}</small></p>
+        <h4 class="card-title" style="text-align: center">{{ campeon.doc }}</h4>
+        <p class="card-text" style="text-align: center"> {{ campeon.esp }} </p>
+        <p class="card-text" style="text-align: center"><small class="text-muted" >{{ campeon.telefono }}</small></p>
 
         <button (click)="verCampeon()" type="button" class="btn btn-outline-primary btn-block">
         Ver perfil
