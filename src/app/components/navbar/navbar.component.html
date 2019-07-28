@@ -31,5 +31,19 @@
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit" style="margin-left:5px ">Buscar</button>
       </form>
       <button class="btn btn-outline-light my-2 my-sm-0" style="margin-left:5px " (click)="login()" *ngIf="!auth.isAuthenticated()" type="button">Ingresar</button>
-      <button class="btn btn-outline-light my-2 my-sm-0" style="margin-left:5px " (click)="salir()" type="button" *ngIf="auth.isAuthenticated()">Salir</button>
+      <div style="padding: 5px" *ngIf="auth.isAuthenticated()">
+          <div class="btn-group dropleft" role="group" aria-label="Button group with nested dropdown">
+              <div class="btn-group" role="group">
+                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btnGroupDrop1">
+                    <img [src]="profile.picture" class="img-thumbnail rounded-circle" style="width: 40px">
+                </a>
+              <div class="dropdown-menu text-center" aria-labelledby="btnGroupDrop1" style="margin-top: 55px;margin-left: 100px;margin-right: 0px">
+                  <input type="text" class="form-control text-center" id="inlineFormInputGroup" readonly="true" value="{{ profile.name }}" style="width: 200px;margin: 8px">
+                  <input type="text" class="form-control text-center" id="inlineFormInputGroup" readonly="true" value="{{ profile.updated_at | date:'dd-MM-yyyy' }}" style="width: 200px;margin: 8px">
+                  <hr>
+                <button type="button" class="btn btn-outline-danger" style="width: 200px" (click)="salir()"><span class="fas fa-sign-out-alt"></span></button>
+              </div>
+            </div>
+          </div>
+      </div>
 </nav>
