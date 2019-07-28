@@ -1,0 +1,14 @@
+.fondoTitulo{
+    background-color: dodgerblue;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px soli blue;
+    border-radius: 20px;
+    padding: 5px;
+    width: 30%;
+}
+.inputPaciente{
+    border-radius: 50px;
+    width: 20%px;
+    margin-bottom: 15px
+}

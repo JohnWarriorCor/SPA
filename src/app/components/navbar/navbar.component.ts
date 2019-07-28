@@ -1,16 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styles: []
 })
 export class NavbarComponent {
 
-  constructor( private router: Router ) {
-
+  constructor( private auth: AuthService ) {
+    auth.handleAuthentication();
   }
+
+
+  login() {
+    this.auth.login();
+  }
+
+  salir() {
+    this.auth.logout();
+  }
+
+
+
 
 }

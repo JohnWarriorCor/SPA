@@ -10,14 +10,14 @@
           <li class="nav-item " routrLinkActive="active">
               <b><a class="nav-link" [routerLink]="['home']"><span class="fa fa-home"></span> Inicio</a></b>
           </li>
-          <li class="nav-item" routrLinkActive="active">
+          <li class="nav-item" routrLinkActive="active" *ngIf="auth.isAuthenticated()">
               <b><a class="nav-link" [routerLink]="['doctores']"><span class="fa fa-user-md"></span> Doctores</a></b>
           </li>
-          <li class="nav-item" routrLinkActive="active">
-              <b><a class="nav-link" [routerLink]="['/invocador', 'nuevo']"><span class="fas fa-dna"></span> Consulta</a></b>
+          <li class="nav-item" routrLinkActive="active" *ngIf="auth.isAuthenticated()">
+              <b><a class="nav-link" [routerLink]="['/invocador', 'nuevo']"><span class="fas fa-dna"></span>Registrar paciente</a></b>
           </li>
-          <li class="nav-item" routrLinkActive="active">
-              <b><a class="nav-link" [routerLink]="['invocadores']"><span class="fa fa-user-circle"></span> Pacientes</a></b>
+          <li class="nav-item" routrLinkActive="active" *ngIf="auth.isAuthenticated()">
+              <b><a class="nav-link" [routerLink]="['invocadores']"><span class="fa fa-user-circle"></span>Pacientes</a></b>
           </li>
       </ul>
   </div>
@@ -30,4 +30,6 @@
         </div>
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit" style="margin-left:5px ">Buscar</button>
       </form>
+      <button class="btn btn-outline-light my-2 my-sm-0" style="margin-left:5px " (click)="login()" *ngIf="!auth.isAuthenticated()" type="button">Ingresar</button>
+      <button class="btn btn-outline-light my-2 my-sm-0" style="margin-left:5px " (click)="salir()" type="button" *ngIf="auth.isAuthenticated()">Salir</button>
 </nav>

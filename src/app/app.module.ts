@@ -18,7 +18,8 @@ import { CampeonTarjetaComponent } from './components/campeon-tarjeta/campeon-ta
 import { FooterComponent } from './components/footer/footer.component';
 import { DoctoresComponent } from './components/doctores/doctores.component';
 
-
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -43,7 +44,9 @@ import { DoctoresComponent } from './components/doctores/doctores.component';
     APP_ROUTING
   ],
   providers: [
-    InvocadoresService
+    InvocadoresService,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
