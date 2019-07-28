@@ -1,4 +1,5 @@
-<h3 class="fondoTitulo">Paciente <small class="color-personal">{{ invocador.nombre }}</small></h3>
+<hr>
+<h3 class="fondoTitulo">Paciente <small class="color-personal">{{ invocador.apellido }}</small></h3>
 <button [routerLink]="['/invocadores']" class="btn btn-outline-info m-1"><span class="fas fa-list-ul"></span></button>
 <button (click)="agregarNuevo( forma )" class="btn btn-outline-primary m-1"><span class="fas fa-user-plus"></span></button>
 <hr>
@@ -7,27 +8,77 @@
         <form (ngSubmit)="guardar()" #forma="ngForm" novalidate class="text-center">
             <div class="row">
                 <div class="col">
-                        <h6 class="text-left">Nombre</h6>
-                        <input [(ngModel)]="invocador.nombre" type="text" name="nombre" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del invocador" required>
+                    <h6 class="text-left gray">Nombre:</h6>
+                    <input [(ngModel)]="invocador.nombre" type="text" name="nombre" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del paciente" required>
                 </div>
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <h6 class="text-left">Documento</h6>
-                            <select class="browser-default custom-select shadow p-3 inputPaciente" name="documento">
+                            <h6 class="text-left gray">Documento:</h6>
+                            <select class="custom-select shadow inputPaciente gray" id="documento" name="documento" [(ngModel)]="invocador.documento">
                                 <option selected>Tipo</option>
-                                <option value="1">Cedula Ciudadania</option>
-                                <option value="2">Tarjeta Identidad</option>
-                                <option value="3">Contraseña</option>
+                                <option *ngFor="let documento of documentos" [value]="documento.doc">{{documento.doc}}</option>
                             </select>
                         </div>
                         <div class="col">
-                            <h6 class="text-left">Número</h6>
-                            <input [(ngModel)]="invocador.nombre" type="text" name="nombre" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del invocador" required>
+                            <h6 class="text-left gray">Número:</h6>
+                            <input [(ngModel)]="invocador.numero" type="text" name="numero" class="form-control shadow p-3 inputPaciente" placeholder="Numero de identificación" required>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="gray text-left">Apellidos:</h6>
+                    <input [(ngModel)]="invocador.apellido" type="text" name="apellido" class="form-control shadow p-3 inputPaciente" placeholder="Apellidos del paciente" required>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="gray text-left">Edad:</h6>
+                            <input [(ngModel)]="invocador.edad" type="text" name="edad" class="form-control shadow p-3 inputPaciente" placeholder="Edad del paciente" required>
+                        </div>
+                        <div class="col">
+                            <h6 class="gray text-left">Altura:</h6>
+                            <input [(ngModel)]="invocador.altura" type="text" name="altura" class="form-control shadow p-3 inputPaciente" placeholder="Altura en centimetros (cm)" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="gray text-left">Dirección:</h6>
+                    <input [(ngModel)]="invocador.direccion" type="text" name="direccion" class="form-control shadow p-3 inputPaciente" placeholder="Dirección de residencia del paciente" required>
+                </div>
+                <div class="col">
+                    <h6 class="gray text-left">Celular:</h6>
+                    <input [(ngModel)]="invocador.celular" type="text" name="celular" class="form-control shadow p-3 inputPaciente" placeholder="Numero celular del paciente (+57) 310 000 0000" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                        <h6 class="gray text-left">Correo:</h6>
+                        <input [(ngModel)]="invocador.correo" type="text" name="correo" class="form-control shadow p-3 inputPaciente" placeholder="paciente@mail.com" required>
+                </div>
+                <div class="col">
+                        <h6 class="gray text-left">Última visita del paciente:</h6>
+                        <input [(ngModel)]="invocador.ultvisita" type="date" name="ultvisita" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del invocador" required>
+                </div>
+                <div class="col">
+                    <h6 class="gray text-left">Médico</h6>
+                    <select class="custom-select shadow inputPaciente" id="medico" name="documento" [(ngModel)]="invocador.medico">
+                        <option selected>Desplegar</option>
+                        <option *ngFor="let medico of medicos" [value]="medico.medic">{{medico.medic}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="gray text-left">Observaciones</h6>
+                    <textarea [(ngModel)]="invocador.observa" name="observa" class="form-control shadow p-3 inputPaciente" placeholder="..." rows="3"></textarea>
+                </div>
+            </div>
+            <!--***************************************
             <div class="form-group">
                 <h6>Nombre</h6>
                 <input [(ngModel)]="invocador.nombre" type="text" name="nombre" class="form-control shadow p-3 inputPaciente" placeholder="Nombre del invocador" required>
@@ -58,9 +109,11 @@
                 </div>
             </div>
             <br>
+            **********************************-->
             <div class="form-group">
-                <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-light">Guardar cambios</button>
+                <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-success" style="width: 100%"><span class="far fa-save fa-3x"></span></button>
             </div>
+            <hr>
         </form>
     </div>
 </div>

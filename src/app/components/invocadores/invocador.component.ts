@@ -22,45 +22,35 @@ export class InvocadorComponent {
   controls: any;
   nuevo = false;
   id: string;
-
-  divisiones = [
-    {divi: 'I'},
-    {divi: 'II'},
-    {divi: 'III'},
-    {divi: 'IV'}
+  documentos = [
+    {doc: 'C.C.'},
+    {doc: 'T.I.'},
+    {doc: 'CON'}
   ];
-  regiones = [
-    {clave: 'LAN', descripcion: 'Latinoamerica Norte'},
-    {clave: 'LAS', descripcion: 'Latinoamerica Sur'},
-    {clave: 'EUW', descripcion: 'Europa Este'},
-    {clave: 'BR', descripcion: 'Brasil'},
-    {clave: 'LCK', descripcion: 'Korea'}
-  ];
-  ligas = [
-    { lig: 'HIERRO' },
-    { lig: 'BRONCES' },
-    { lig: 'PLATA' },
-    { lig: 'ORO' },
-    { lig: 'PLATINO' },
-    { lig: 'DIAMANTE' },
-    { lig: 'MAESTRO' },
-    { lig: 'GRAN-MAESTRO' },
-    { lig: 'RETADOR' }
-  ];
-  lineas = [
-    { lin: 'MID' },
-    { lin: 'TOP' },
-    { lin: 'JG' },
-    { lin: 'SUPP' },
-    { lin: 'ADC' }
+  medicos = [
+    {medic: 'Dra. Rostenkowski'},
+    {medic: 'Dr. Cooper'},
+    {medic: 'Dra. Fowler'},
+    {medic: 'Dr. Hofstadter'},
+    {medic: 'Dr. Koothrappali'},
+    {medic: 'Dr. Wolowitz'},
+    {medic: 'Dr. Murphy'},
+    {medic: 'Dra. Browne'},
+    {medic: 'Dr. Glassman'}
   ];
   invocador: Invocador = {
     nombre: '',
-    username: '',
-    servidor: '',
-    liga: '',
-    division: '',
-    carriles: []
+    documento: '',
+    numero: '',
+    apellido: '',
+    edad: '',
+    altura: '',
+    direccion: '',
+    celular: '',
+    correo: '',
+    ultvisita: '',
+    medico: '',
+    observa: '',
   };
   // , private formBuilder: FormBuilder, private validatorfn: ValidatorFn
   constructor( private _INVOCADORESSERVICES: InvocadoresService, private router: Router, private activatedRoute: ActivatedRoute) {

@@ -14,10 +14,10 @@
               <b><a class="nav-link" [routerLink]="['doctores']"><span class="fa fa-user-md"></span> Doctores</a></b>
           </li>
           <li class="nav-item" routrLinkActive="active" *ngIf="auth.isAuthenticated()">
-              <b><a class="nav-link" [routerLink]="['/invocador', 'nuevo']"><span class="fas fa-dna"></span>Registrar paciente</a></b>
+              <b><a class="nav-link" [routerLink]="['/invocador', 'nuevo']"><span class="fas fa-address-card"></span> Registrar paciente</a></b>
           </li>
           <li class="nav-item" routrLinkActive="active" *ngIf="auth.isAuthenticated()">
-              <b><a class="nav-link" [routerLink]="['invocadores']"><span class="fa fa-user-circle"></span>Pacientes</a></b>
+              <b><a class="nav-link" [routerLink]="['invocadores']"><span class="fa fa-user-circle"></span> Pacientes</a></b>
           </li>
       </ul>
   </div>

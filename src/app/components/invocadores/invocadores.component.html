@@ -1,4 +1,4 @@
-<img src="assets/logo.jpg" class="rounded mx-auto d-block logo" alt="LOL">
+<img src="assets/img/brain.png" class="rounded mx-auto d-block logo" alt="LOL" style="width: 20%">
 <div class="row">
     <div class="col-md-12 text-right p-3">
         <button [routerLink]="['/invocador', 'nuevo']" class="btn btn-outline-primary" type="button">Nuevo</button>
@@ -6,38 +6,47 @@
 </div>
 <div class="row animated fadeIn fast">
     <div class="col-md-12">
-        <table class="table table-light table-striped table-hover">
-            <thead class="thead-dark">
-                <tr class="mitad">
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre de invocador</th>
-                    <th scope="col">Nombre de usuario</th>
-                    <th scope="col">Servidor</th>
-                    <th scope="col">Liga</th>
-                    <th scope="col">División</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody class="backg">
-                <tr *ngFor="let k of invocadores | keys; let i = index" class="mitad">
-                    <td scope="row">{{ i + 1 }}</td>
-                    <td>{{ invocadores[k].nombre }}</td>
-                    <td>{{ invocadores[k].username }}</td>
-                    <td>{{ invocadores[k].servidor }}</td>
-                    <td>{{ invocadores[k].liga }}</td>
-                    <td>{{ invocadores[k].division }}</td>
-                    <td class="text-right">
-                        <button [routerLink]="['/invocador', k]" type="button" class="btn btn-outline-success m-1">Editar</button>
-                        <button (click)="borrarInvocador(k)" type="button" class="btn btn-outline-danger m-1">Eliminar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div *ngIf="(invocadores | keys).length === 0 && !loading" class="alert alert-info text-center" role="alert">
-            <strong><h4 class="alert-heading">No hay regsitros que mostrar</h4></strong>
+        <div class="table-responsive-md">
+  <table class="table table-bordered">
+     <thead>
+    <tr class="tablaAdmin text-center">
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">#</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Nombre</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Apellidos</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">TD</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Número</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Edad</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Dirección</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Celular</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Médico</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Última revision</th>
+      <th scope="col" style="width: 10%" class="align-middle" style="background-color: rgb(72, 153, 228);">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let k of invocadores | keys; let i = index" class="mitad" style="font-size: 12px">
+      <td scope="row">{{ i + 1 }}</td>
+      <td>{{ invocadores[k].nombre }}</td>
+      <td>{{ invocadores[k].apellido }}</td>
+      <td>{{ invocadores[k].documento }}</td>
+      <td>{{ invocadores[k].numero }}</td>
+      <td>{{ invocadores[k].edad }}</td>
+      <td>{{ invocadores[k].direccion }}</td>
+      <td>{{ invocadores[k].celular }}</td>
+      <td>{{ invocadores[k].medico }}</td>
+      <td>{{ invocadores[k].ultvisita }}</td>
+       <td style="margin: 10px;">
+        <div class="row">
+          <div class="col text-left" style="width: 50%;padding: 2%">
+            <button [routerLink]="['/invocador', k]" class="btn btn-outline-success" style="width: 100%;padding: 0%"><span class="fas fa-pencil-alt"></span></button>
+          </div>
+          <div class="col text-right" style="width: 50%;padding: 2%">
+            <button (click)="borrarInvocador(k)" class="btn btn-outline-danger" style="width: 100%;padding: 0%"><span class="far fa-trash-alt"></span></button>
+          </div>
         </div>
-        <div *ngIf="loading" class="alert alert-warning text-center" role="alert">
-            <strong><h4 class="alert-heading">Cargando...</h4></strong>
-        </div>
+      </td>
+    </tr>    
+  </tbody>
+  </table>
     </div>
 </div>
