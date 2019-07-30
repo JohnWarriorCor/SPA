@@ -43,25 +43,6 @@
     animation-name: fadeIn;
 }
 
-.lol0 {
-    background-image: url("assets/fondo0.jpg");
-    background-color: #cccccc;
-}
-
-.lol1 {
-    background-image: url("assets/fondo1.jpg");
-    background-color: #cccccc;
-}
-
-.lol2 {
-    background-image: url("assets/fondo2.jpg");
-    background-color: #cccccc;
-}
-
-.lol3 {
-    background-image: url("assets/dark.jpg");
-    background-color: #cccccc;
-}
 
 .color-personal {
     color: white;

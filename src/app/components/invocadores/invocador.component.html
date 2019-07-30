@@ -1,5 +1,5 @@
 <hr>
-<h3 class="fondoTitulo">Paciente <small class="color-personal">{{ invocador.apellido }}</small></h3>
+<h3 class="fondoTitulo">Paciente <small class="color-personal">{{ invocador.apellido }} {{ invocador.nombre }}</small></h3>
 <button [routerLink]="['/invocadores']" class="btn btn-outline-info m-1"><span class="fas fa-list-ul"></span></button>
 <button (click)="agregarNuevo( forma )" class="btn btn-outline-primary m-1"><span class="fas fa-user-plus"></span></button>
 <hr>
